@@ -1,0 +1,140 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 15px;
+}
+html{
+    margin: 0;
+    padding: 0;
+    background-color:darkgray;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.page_dalam{
+    width: 1000px;
+    margin:auto;
+}
+.page_penuh{
+    width: 100%;
+}
+nav{
+    z-index: 100;
+    color: aliceblue;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+}
+nav.putih{
+    background-color: aliceblue;
+}
+nav .logo{
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+}
+nav .logo img{
+    vertical-align: middle;
+    width: 120px;
+}
+nav .menu{
+    float: right;
+    height: 60px;
+    max-width: 600px;
+}
+nav .menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav .menu ul li{
+    list-style-type: none;
+    float: left;
+    line-height: 60px;
+}
+nav ul li a{
+    color: white;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+nav ul li a :hover{
+    text-decoration: underline;
+}
+
+/* Pengaturan header */
+header{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+header video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+header .intro{
+    z-index: 100;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+header .intro h3{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+.button{
+    background-color: #c86d85;
+    height: 40px;
+    line-height: 44px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+header .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 50%; /* supaya warna tulisannya kontras dgn video */
+    z-index: -1;
+}
+.button_menu{
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+.menu-icon{
+    font-size: 1500px;
+    display: none;
+}
+
+@media only screen & (max-width : 768px){
+    menu{
+        display: none;
+    }
+    .menu-icon{
+    display: flex;
+    align-items: center;
+    }
+}
