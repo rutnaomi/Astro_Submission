@@ -12,6 +12,16 @@ function klikMenu(){
   })
 }
 
+window.addEventListener('resize', () => {
+  let width = window.innerWidth;
+  if(width > 989){
+    menu.style.display = 'block';
+  }else{
+    menu.style.display = 'none';
+  }
+  klikMenu();
+})
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
