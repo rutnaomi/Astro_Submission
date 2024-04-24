@@ -27,6 +27,7 @@ nav{
     border-bottom: 1px solid #b1b1b1;
     line-height: 60px;
     width: 100%;
+    
 }
 nav.putih{
     background-color: aliceblue;
@@ -39,7 +40,7 @@ nav .logo{
 }
 nav .logo img{
     vertical-align: middle;
-    width: 120px;
+    width: 60px;
 }
 nav .menu{
     float: right;
@@ -168,7 +169,7 @@ section h3::after{
 section p.ringkasan{
     font-style: italic;
     font-size: 18px;
-    color: #ababab;
+    color: grey;
 }
 section .conten-isi{
     font-style: normal;
@@ -179,7 +180,9 @@ nav.putih{
 nav.putih .button_menu .garis{
     background-color: #333;
 }
-
+nav .logo img.hitam{
+    display: none;
+}
 
 
 @media screen and (max-width: 991.98px) {
