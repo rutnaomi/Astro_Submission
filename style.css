@@ -176,6 +176,10 @@ section .conten-isi{
 nav.putih{
     background-color: #fff;
 }
+nav.putih .button_menu .garis{
+    background-color: #333;
+}
+
 
 
 @media screen and (max-width: 991.98px) {
