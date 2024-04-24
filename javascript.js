@@ -3,6 +3,7 @@ const tombolMenu = document.querySelector('.button_menu');
 const menu = document.querySelector('nav .menu ul');
 const logoHitam = document.querySelector('nav .logo img.hitam');
 const logoPutih = document.querySelector('nav .logo img.putih');
+
 function klikMenu(){
   tombolMenu.addEventListener('click', () => {
     if(menu.style.display === 'none') {

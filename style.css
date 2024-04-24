@@ -7,6 +7,7 @@ html{
     margin: 0;
     padding: 0;
     background-color:darkgray;
+    scroll-behavior: smooth;
 }
 body{
     margin: 0;
@@ -27,10 +28,13 @@ nav{
     border-bottom: 1px solid #b1b1b1;
     line-height: 60px;
     width: 100%;
-    
+    transition: background-color 0.3s ease;
 }
 nav.putih{
     background-color: aliceblue;
+}
+nav.putih ul li a{
+    color: #333;
 }
 nav .logo{
     float: left;
@@ -53,6 +57,7 @@ nav .menu{
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
    
 
 }
@@ -62,6 +67,7 @@ nav .menu ul li{
     line-height: 60px;
 }
 nav ul li a{
+    
     color: white;
     text-align: center;
     padding: 0px 16px 0px 16px;
@@ -190,20 +196,23 @@ nav .logo img.hitam{
         width: 90%;
     }
    nav .menu ul {
-    margin-top: 50px;
+    display: none;
+    margin-top: 60px;
+    padding-left: 0px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    display: none;
    }
    nav .menu ul li{
     width: 100%;
     border-bottom: 1px solid #ccc;
+    background-color: white;
     line-height: 40px;
    }
-   nav .meu ul li a{
+   nav .menu ul li a{
     color: #333;
+
    }
    .button_menu{
     display: flex;
