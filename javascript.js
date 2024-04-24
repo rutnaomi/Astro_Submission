@@ -1,4 +1,4 @@
-
+const nav = document.querySelector('nav');
 const tombolMenu = document.querySelector('.button_menu');
 const menu = document.querySelector('nav .menu ul');
 
@@ -22,7 +22,17 @@ window.addEventListener('resize', () => {
   klikMenu();
 })
 
-
+document.addEventListener('DOMContentLoaded', () => {
+  let scroll_pos = 0;
+  document.addEventListener('scroll', () => {
+    scroll_pos = window.scrollY;
+    if(scroll_pos > 0){
+      nav.classList.add('putih');
+    }else{
+      nav.classList.remove('putih');
+    }
+  })
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const width = window.innerWidth;
