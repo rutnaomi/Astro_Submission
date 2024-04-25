@@ -5,6 +5,8 @@ const logoHitam = document.querySelector('nav .logo img.hitam');
 const logoPutih = document.querySelector('nav .logo img.putih');
 
 
+
+
 function klikMenu(){
   tombolMenu.addEventListener('click', () => {
     if(menu.style.display === 'none') {
