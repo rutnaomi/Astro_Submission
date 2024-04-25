@@ -3,6 +3,8 @@ const tombolMenu = document.querySelector('.button_menu');
 const menu = document.querySelector('nav .menu ul');
 const logoHitam = document.querySelector('nav .logo img.hitam');
 const logoPutih = document.querySelector('nav .logo img.putih');
+const drag = document.querySelector('.container-card');
+
 
 
 
@@ -45,5 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
   if(width < 990){
     klikMenu();
   }
- 
 });
+
+let isDragging = false;
+let startX;
+let startScrollLeft;
+
+
+drag.addEventListener('mousedown', (ev) => {
+  isDragging = true;
+  drag.classList.add('dragging');
+  startX = ev.pageX;
+  startScrollLeft = drag.scrollLeft;
+})
+
+drag.addEventListener("mousemove", (ev) => {
+  if(!isDragging)return;
+  drag.scrollLeft = startScrollLeft - (ev.pageX - startX);
+})
+
+drag.addEventListener('mouseup', () => {
+  isDragging = false;
+  drag.classList.remove('dragging');
+})
+
