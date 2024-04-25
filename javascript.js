@@ -4,6 +4,7 @@ const menu = document.querySelector('nav .menu ul');
 const logoHitam = document.querySelector('nav .logo img.hitam');
 const logoPutih = document.querySelector('nav .logo img.putih');
 
+
 function klikMenu(){
   tombolMenu.addEventListener('click', () => {
     if(menu.style.display === 'none') {
@@ -25,22 +26,17 @@ window.addEventListener('resize', () => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-  let scroll_pos = 0;
   document.addEventListener('scroll', () => {
-    scroll_pos = window.scrollY;
-    if(scroll_pos > 0){
-      nav.classList.add('putih');
-      logoHitam.style.display ='block';
-      logoPutih.style.display ='none';
-    }else{
-      nav.classList.remove('putih');
-      logoHitam.style.display ='none';
-      logoPutih.style.display ='block';
-    }
-    klikMenu();
+    const scrollPos = window.scrollY;
+    const isScrolled = scrollPos > 0;
     
-  })
-})
+    nav.classList.toggle('putih', isScrolled);
+    logoHitam.style.display = isScrolled ? 'block' : 'none';
+    logoPutih.style.display = isScrolled ? 'none' : 'block';
+    
+    klikMenu();
+  });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const width = window.innerWidth;
