@@ -66,6 +66,8 @@ drag.addEventListener("mousemove", (ev) => {
   }
 });
 
+
+
 drag.addEventListener("mouseup", () => {
   isDragging = false;
   drag.classList.remove("dragging");
@@ -80,16 +82,18 @@ function getData() {
       }
       return response.json();
     })
-    .then((data) => data.wisata.map(({ nama, deskripsi, gambar }) => ({
+    .then((data) => data.wisata.map(({ nama, deskripsi, gambar,link }) => ({
       nama,
       deskripsi,
-      gambar
+      gambar,
+      link
     })));
 }
 
 function addCard(){
   getData().then(data => {
     data.forEach(item => {
+      console.log(item.web)
       let card = ''
       card = `
       <div class="card">
@@ -97,7 +101,7 @@ function addCard(){
         <div div class="card-body">
           <h5 class="card-title">${item.nama}</h5>
           <p class="card-text">${item.deskripsi}</p>
-          <a href="#" class="card-link">Baca Lebih Lanjut</a>
+          <a href="${item.link}" class="card-link">Baca Lebih Lanjut</a>
         </div>
       </div>
       `;
@@ -105,3 +109,5 @@ function addCard(){
     });
   });
 }
+
+
