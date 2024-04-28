@@ -74,20 +74,19 @@ drag.addEventListener("mouseup", () => {
 });
 
 const url = "/data/wisata.json";
-function getData() {
-  return fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Gagal mengambil data');
-      }
-      return response.json();
-    })
-    .then((data) => data.wisata.map(({ nama, deskripsi, gambar,link }) => ({
-      nama,
-      deskripsi,
-      gambar,
-      link
-    })));
+async function getData() {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Gagal mengambil data');
+  }
+  const data = await response.json();
+  return data.wisata.map(({ nama, deskripsi, gambar, link, teks }) => ({
+    nama,
+    deskripsi,
+    gambar,
+    link,
+    teks
+  }));
 }
 
 function addCard(){
@@ -109,5 +108,6 @@ function addCard(){
     });
   });
 }
+
 
 

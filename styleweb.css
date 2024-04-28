@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 20px;
-  
+}
+body{
+  background-color: #f9f9f9;
 }
 
 nav{
@@ -37,19 +39,141 @@ nav ul li a{
 }
 
 .container{
+  width: 65%;
   margin-top: 40px;
   margin-left: 80px ;
-  margin-right: 500px;
+  margin-right: px;
 }
 
 .container img{
+  border-radius: 10px;
   height: 400px;
-  width: 800px;/
+  width: 100%;
 }
 .container h2{
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+.container-location{
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+.container-location p{
+  margin-left: 20px;
+}
+.container-location img{
+  width: 15px;
+  height: 20px;
+}
+.content-text{
+  margin-top: 20px;
+}
+.container hr{
+  opacity: 10%;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.container p{
+.container-search-bar{
+  width: 300px;
+  height: 300px;
+  background-color: rgba(241, 241, 241, 0.565);
+}
+
+.search-bar {
+  
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-bar h4{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.search-bar hr{
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 10%;
+}
+
+.search-bar input {
+  width: 75%;
+  padding: 5px 10px;
+  margin-top: 25px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  border-radius: 3px;
+  width: 75%;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+#content-text{
+  text-align: justify;
+}
+
+.container-main{
+  display: flex;
+  flex-direction: row;
+}
+
+.container-main .container-kanan{
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+
+
+.gambar{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.gambar img{
+  margin-right: 20px;
+  width : 80px;
+  height: 80px;
+
+}
+a .gambar .text-iklan {
+  color : black;
+}
+a{
+  text-decoration: none;
+}
+
+.ask{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ask hr{
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  opacity: 10%;
+}
+.ask h4{
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.container-ask{
+  width: 300px;
+  height: 200px;
+  background-color: rgba(241, 241, 241, 0.565);
 }
