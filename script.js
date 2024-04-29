@@ -4,6 +4,8 @@ const isi = document.getElementById('content-text');
 const lokasi = document.getElementById('lokasi');
 const gambar = document.getElementById('img');
 const iklan = document.getElementById('iklan');
+const resultContainer = document.querySelector(".result");
+const input = document.getElementById("input");
 
 function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -70,4 +72,33 @@ async function getData(){
   }
 }
 
-window.addEventListener('DOMContentLoaded', getData());
+window.addEventListener('DOMContentLoaded', () => {
+  getData();
+
+  
+  // search 
+  input.addEventListener('keydown', async () => {
+    let result = [];
+    let inputVal = input.value;
+    const response = await fetch(url);
+    const data = await response.json();
+    const {wisata} = data;
+    if(inputVal.length){
+      result = wisata.filter((keyword) => {
+        return keyword.nama.toLowerCase().includes(inputVal.toLowerCase());
+      })
+    }
+    resultContainer.innerHTML = '';
+    for(const index in result){
+      resultContainer.innerHTML += `
+      <ul>
+        <a href="/${result[index].link}">
+          <li>
+              ${result[index].nama}
+          </li>
+        </a>
+      </ul> 
+      ` 
+    }
+  })
+});
