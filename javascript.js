@@ -4,6 +4,38 @@ const menu = document.querySelector("nav .menu ul");
 const logoHitam = document.querySelector("nav .logo img.hitam");
 const logoPutih = document.querySelector("nav .logo img.putih");
 const drag = document.querySelector(".container-card");
+const nextButton = document.getElementById('next-button')
+const prevButton = document.getElementById('prev-button')
+const card = document.querySelector('.container-card');
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let startScroll = 0;
+  if(startScroll = 0){
+    prevButton.setAttribute('hidden', '')
+  }
+
+  nextButton.addEventListener('click', () => {
+    drag.scrollLeft += startScroll + 494;
+    startScroll = drag.scrollLeft += startScroll + 494;
+    if(startScroll > 0){
+      prevButton.removeAttribute('hidden')
+    }
+    
+  })
+  prevButton.addEventListener('click', () => {
+    drag.scrollLeft -= startScroll + 494;
+    startScroll = drag.scrollLeft -= startScroll + 494;
+    if(startScroll < 0){
+      prevButton.setAttribute('hidden', '')
+    }
+  })
+})
+
+
+
 
 function klikMenu() {
   tombolMenu.addEventListener("click", () => {
@@ -90,9 +122,10 @@ async function getData() {
 }
 
 function addCard(){
+  const card = document.createElement('div');
+  card.classList.add('card')
   getData().then(data => {
     data.forEach(item => {
-      console.log(item.web)
       let card = ''
       card = `
       <div class="card">
@@ -108,6 +141,4 @@ function addCard(){
     });
   });
 }
-
-
 
