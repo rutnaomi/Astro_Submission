@@ -65,7 +65,7 @@ drag.addEventListener("mousemove", (ev) => {
     addCard();
   }
 });
-
+e
 
 
 drag.addEventListener("mouseup", () => {
