@@ -1,25 +1,30 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 20px;
+    line-height: 23px;
     font-size: 15px;
 }
 html{
     margin: 0;
     padding: 0;
-    background-color:#f9f9f9;
+    background-color: #B5C18E;
     scroll-behavior: smooth;
 }
+
 body{
     margin: 0;
     padding: 0;
 }
+
 .page_dalam{
     width: 1000px;
+    height: 90px;
     margin:auto;
 }
+
 .page_penuh{
     width: 100%;
 }
+
 nav{
     z-index: 100;
     color: aliceblue;
@@ -30,51 +35,58 @@ nav{
     width: 100%;
     transition: background-color 0.3s ease;
 }
+
 nav.putih{
     background-color: aliceblue;
 }
+
 nav.putih ul li a{
-    color: #333;
+    color: #000000;
 }
+
 nav .logo{
     float: left;
     position: relative;
     line-height: 55px;
     text-align: center;
+    bottom: 8px;
 }
+
 nav .logo img{
     vertical-align: middle;
-    width: 60px;
+    width: 110px;
 }
+
 nav .menu{
     float: right;
-    height: 60px;
+    height: 110px;
     max-width: 600px;
- 
 }
+
 nav .menu{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-   
-
 }
+
 nav .menu ul li{
     list-style-type: none;
     float: left;
-    line-height: 60px;
+    line-height: 55px;
 }
+
 nav ul li a{
-    
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 0px 16px 0px 16px;
     text-decoration: none;
 }
-nav ul li a :hover{
-    text-decoration: underline;
+nav ul li a:hover{
+    background-color: #cde2c6;
+    transition: 0.5s;
+    border-radius: 5px;
 }
 
 /* Pengaturan header */
@@ -192,14 +204,11 @@ section .conten-isi {
     background-color: #567f06;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-section .conten-isi p{
-    
-}
-
 
 .layarkamilagi{
-width: 50%;
+    width: 50%;
 }
+
 .k{
     display: flex;
     align-items: center;
