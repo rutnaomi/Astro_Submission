@@ -24,8 +24,6 @@ function getRandomValue(min, max) {
 
 
 
-
-
 async function getData(){
   const response = await fetch(url);
   const data = await response.json();
