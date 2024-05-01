@@ -2,14 +2,10 @@
 
 
 *{
-<<<<<<< HEAD
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 23px;
-=======
     font-family: 'Poppins', sans-serif;
     line-height: 20px;
->>>>>>> 301b41daf8e875366d0f7a6466758b8bde6b98fe
     font-size: 15px;
+    letter-spacing: 1px;
 }
 html{
     margin: 0;
