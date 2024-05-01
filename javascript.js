@@ -4,37 +4,40 @@ const menu = document.querySelector("nav .menu ul");
 const logoHitam = document.querySelector("nav .logo img.hitam");
 const logoPutih = document.querySelector("nav .logo img.putih");
 const drag = document.querySelector(".container-card");
-const nextButton = document.getElementById('next-button')
-const prevButton = document.getElementById('prev-button')
-const card = document.querySelector('.container-card');
+const button = document.querySelectorAll(".wrapper .img");
+const nextBtn = document.getElementById('right');
+const prevBtn = document.getElementById('left');
 
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  let startScroll = 0;
-  if(startScroll = 0){
-    prevButton.setAttribute('hidden', '')
-  }
-
-  nextButton.addEventListener('click', () => {
-    drag.scrollLeft += startScroll + 494;
-    startScroll = drag.scrollLeft += startScroll + 494;
-    if(startScroll > 0){
-      prevButton.removeAttribute('hidden')
-    }
-    
-  })
-  prevButton.addEventListener('click', () => {
-    drag.scrollLeft -= startScroll + 494;
-    startScroll = drag.scrollLeft -= startScroll + 494;
-    if(startScroll < 0){
-      prevButton.setAttribute('hidden', '')
-    }
+button.forEach(btn => {
+  btn.addEventListener('click', () => {
+    drag.scrollLeft += btn.id == 'left' ? -494 : 494;
   })
 })
 
 
+
+  // let startScroll = 0;
+  // if(startScroll == 0){
+  //   prevButton.setAttribute('hidden', '')
+  // }
+
+  // nextButton.addEventListener('click', () => {
+  //   drag.scrollLeft += startScroll + 494;
+  //   startScroll = drag.scrollLeft += startScroll+ 494;
+  //   console.log(drag.scrollWidth - drag.clientWidth)  
+      
+  //   if(startScroll > 0){
+  //     prevButton.removeAttribute('hidden')
+  //   }
+    
+  // })
+  // prevButton.addEventListener('click', () => {
+  //   drag.scrollLeft -= startScroll + 494;
+  //   startScroll = drag.scrollLeft -= startScroll + 494;
+  //   if(startScroll < 0){
+  //     prevButton.setAttribute('hidden', '')
+  //   }
+  // })
 
 
 function klikMenu() {
@@ -78,6 +81,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// let isDragging = false;
+// let startX;
+// let startScrollLeft;
+
+// drag.addEventListener("mousedown", (ev) => {
+//   isDragging = true;
+//   drag.classList.add("dragging");
+//   startX = ev.pageX;
+//   startScrollLeft = drag.scrollLeft;
+// });
+
+// drag.addEventListener("mousemove", (ev) => {
+//   if (!isDragging) return;
+//   drag.scrollLeft = startScrollLeft - (ev.pageX - startX);
+
+//   if (drag.scrollWidth - drag.clientWidth - 100 - drag.scrollLeft < 100) {
+//     addCard();
+//   }
+// });
+// e
+
+
+// drag.addEventListener("mouseup", () => {
+//   isDragging = false;
+//   drag.classList.remove("dragging");
+// });
+
 const url = "/data/wisata.json";
 async function getData() {
   const response = await fetch(url);
@@ -95,8 +125,6 @@ async function getData() {
 }
 
 function addCard(){
-  const card = document.createElement('div');
-  card.classList.add('card')
   getData().then(data => {
     data.forEach(item => {
       let card = ''
