@@ -39,6 +39,11 @@ nav .nav-link a{
   list-style: none;
 }
 
+.nav-link li :hover{
+  color: #a9a18c;
+  transition: 0.2s;
+}
+
 
 
 .logo img{
@@ -47,10 +52,10 @@ nav .nav-link a{
 }
 
 .container{
-  background-color: #a9a18c11;
+  background-color: #ffffff75;
   border-radius: 10px;
   width: 65%;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 80px ;
   padding: 20px 20px 20px 20px
 }
@@ -64,7 +69,6 @@ nav .nav-link a{
   width: 100%;
 }
 .container h2{
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 .container-location{
@@ -86,7 +90,7 @@ nav .nav-link a{
 .container hr{
   opacity: 10%;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .container-search-bar{
@@ -133,27 +137,35 @@ nav .nav-link a{
   cursor: pointer;
 }
 .result{
-  margin-left: 38px;
-  margin-right: 39px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
   z-index: 1;
   position: absolute;
-  background-color: white;
-}
-.result ul {
-  margin-right: -39px;
 }
 .result ul a li:hover{
   background-color: #ccc;
 }
 
 .result ul a li {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+  background-color: white;
   list-style: none;
   padding: 10px;
-  margin-right: 39px;
-  width: 223px;
+  width: 225px;
   cursor: pointer;
-  
 }
+
+input[type='text']{
+  padding: 10px 10px 10px 10px;
+  border: none;
+  border-bottom: 1px solid #a9a18c24;
+  border-radius: 5px 5px 0 0;
+}
+
+
 .result ul a li {
   color: black;
 }

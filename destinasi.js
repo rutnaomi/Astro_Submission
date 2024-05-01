@@ -2,6 +2,7 @@ const artikel = document.querySelector(".container-artikel");
 const url = "/data/wisata.json";
 const sidebar = document.querySelector('.container-kanan');
 const sidebar_content = document.querySelector('.content-wrapper');
+const resultContainer = document.querySelector(".result");
 
 window.onscroll = () =>{
   let scrollTop = window.scrollY;
@@ -50,7 +51,6 @@ async function getData(){
                   </p>
                 </div>
               </div>  
-              <hr>
             </div>
     `
   }
@@ -100,4 +100,33 @@ async function getData(){
 }
 document.addEventListener('DOMContentLoaded',() => {
   getData();
+  input.addEventListener('input', async () => {
+    let result = [];
+    let inputVal = input.value;
+    const response = await fetch(url);
+    const data = await response.json();
+    const {wisata} = data;
+    console.log(inputVal);
+    if(inputVal.length >= 1){
+      result = wisata.filter((keyword) => {
+        return keyword.nama.toLowerCase().includes(inputVal.toLowerCase());
+      })
+      resultContainer.innerHTML = '';
+      for(const index in result){
+        resultContainer.innerHTML += `
+        <ul>
+          <a href="/${result[index].link}">
+            <li>
+                ${result[index].nama}
+            </li>
+          </a>
+        </ul> 
+        ` 
+      }
+    }else{
+      resultContainer.innerHTML = '';
+    }
+  })
 });
+  
+

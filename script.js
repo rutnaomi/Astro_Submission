@@ -77,28 +77,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
   
   // search 
-  input.addEventListener('keydown', async () => {
+  input.addEventListener('input', async () => {
     let result = [];
     let inputVal = input.value;
     const response = await fetch(url);
     const data = await response.json();
     const {wisata} = data;
-    if(inputVal.length){
+    console.log(inputVal);
+    if(inputVal.length >= 1){
       result = wisata.filter((keyword) => {
         return keyword.nama.toLowerCase().includes(inputVal.toLowerCase());
       })
-    }
-    resultContainer.innerHTML = '';
-    for(const index in result){
-      resultContainer.innerHTML += `
-      <ul>
-        <a href="/${result[index].link}">
-          <li>
-              ${result[index].nama}
-          </li>
-        </a>
-      </ul> 
-      ` 
+      resultContainer.innerHTML = '';
+      for(const index in result){
+        resultContainer.innerHTML += `
+        <ul>
+          <a href="/${result[index].link}">
+            <li>
+                ${result[index].nama}
+            </li>
+          </a>
+        </ul> 
+        ` 
+      }
+    }else{
+      resultContainer.innerHTML = '';
     }
   })
 });
