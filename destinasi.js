@@ -6,10 +6,7 @@ const resultContainer = document.querySelector(".result");
 
 window.onscroll = () =>{
   let scrollTop = window.scrollY;
-  let viewportHeight = window.innerHeight;
-  let contentHeight = sidebar_content.getBoundingClientRect().height;
-
-  if(scrollTop >= viewportHeight - contentHeight){
+  if(scrollTop >= 109){
     sidebar_content.classList.add('is-fixed');
   }else{
     sidebar_content.classList.remove('is-fixed');
