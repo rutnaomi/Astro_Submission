@@ -21,9 +21,25 @@ body{
 }
 
 .page_dalam{
-    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
     margin: auto;
 }
+
+.page_dalam ul {
+    height: 100%;
+    display: flex;
+    float: right;
+    margin-right: 40px;
+}
+
+.page_dalam ul li{
+    
+}
+
+
 
 nav{
     height: fit-content;
@@ -40,11 +56,10 @@ nav{
 }
 
 nav .logo{
+    margin-left: 20px;
     float: left;
-    position: relative;
     text-align: center;
     justify-content: center;
-    top: 10px;
 }
 
 nav .logo img{
@@ -55,20 +70,21 @@ nav li{
     display: inline;
 }
 
-.page_dalam ul{
-    justify-items: center;
+
+.hitam{
+    color: #000000;
 }
 
 nav a{
-    text-decoration: underline;
-    color: #486B00;
+    text-decoration: none;
+    color: #ffffff;
     padding: 0px 10px;
     font-weight: bold;
     transition: 0.15s;
 }
 
 nav a:hover{
-    color: #c86d85;
+    color: #486B00;
 }
 
 #nav-button{
@@ -292,31 +308,24 @@ section .conten-isi {
 margin-left: 0;
 
 }
-
+nav{
+    transition: 0.3s;
+}
 
 nav.putih{
+    transition:0.3s;
     background-color: #fff;
+    
 }
-/* nav.putih .button_menu .garis{
+ nav.putih .button_menu .garis{
     background-color: #333;
 }
 nav .logo img.hitam{
     display: none;
-} */
+} 
 
-@media screen and (max-width: 991.98px) {
-    .page_dalam{
-        width: 90%;
-    }
-   nav .menu ul {
-    display: none;
-    margin-top: 60px;
-    padding-left: 0px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+
+
 
 nav .menu ul li{
     width: 100%;
@@ -331,7 +340,7 @@ nav .menu ul li{
 .button_menu{
     display: flex;
    }
-}
+
 
 .wrapper {
     width: 100%;
@@ -540,7 +549,6 @@ ul{
     display: flex;
     height: 40px;
     width: 40px;
-    justify-content: center;
     background-color: rgba(255, 255, 255, 0.2);
     margin-right: 0px 10px 10px 0px;
     line-height: 40px;

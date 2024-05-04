@@ -323,3 +323,89 @@ position: relative;
   width: 50px;
   cursor: pointer;
 }
+
+.scl{
+  max-width: 1000px;
+  background-color: #fff0;
+  margin: auto;
+}
+
+.row{
+  display: flex;
+}
+
+ul{
+  list-style: none;
+
+}
+
+.footer{
+  background-color: #ffffffa9;
+}
+
+.footer-col{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+  margin-bottom: 20px;
+  
+}
+
+.footer-col h4{
+  margin-top: 20px;
+  font-size: 15px;
+  color: black;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.footer-col h4::before{
+  content: ' ';
+  position: absolute;
+  left: 0;
+  height: 2px;
+  box-sizing: border-box;
+}
+
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+  color: #e10000;
+  padding-left: 10px;
+}
+
+.scl-links img{
+  width: 35px;
+  display: flex;
+}
+
+.scl-links{
+  gap: 5px;
+}
+
+.footer-col .scl-links{
+  display: flex;
+  height: 40px;
+  width: 40px;
+  margin-right: 0px 10px 10px 0px;
+  line-height: 40px;
+  transition: all 0.5s ease;
+
+}
+
+.footer-col .scl-links img:hover{
+  background-color: #B5C18E;
+  border-radius: 6px;
+}
+
