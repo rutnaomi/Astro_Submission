@@ -7,37 +7,14 @@ const drag = document.querySelector(".container-card");
 const button = document.querySelectorAll(".wrapper .img");
 const nextBtn = document.getElementById('right');
 const prevBtn = document.getElementById('left');
+const STORAGE_KEY = 'WISATA';
+
 
 button.forEach(btn => {
   btn.addEventListener('click', () => {
     drag.scrollLeft += btn.id == 'left' ? -494 : 494;
   })
 })
-
-
-
-  // let startScroll = 0;
-  // if(startScroll == 0){
-  //   prevButton.setAttribute('hidden', '')
-  // }
-
-  // nextButton.addEventListener('click', () => {
-  //   drag.scrollLeft += startScroll + 494;
-  //   startScroll = drag.scrollLeft += startScroll+ 494;
-  //   console.log(drag.scrollWidth - drag.clientWidth)  
-      
-  //   if(startScroll > 0){
-  //     prevButton.removeAttribute('hidden')
-  //   }
-    
-  // })
-  // prevButton.addEventListener('click', () => {
-  //   drag.scrollLeft -= startScroll + 494;
-  //   startScroll = drag.scrollLeft -= startScroll + 494;
-  //   if(startScroll < 0){
-  //     prevButton.setAttribute('hidden', '')
-  //   }
-  // })
 
 
 function klikMenu() {
@@ -81,32 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// let isDragging = false;
-// let startX;
-// let startScrollLeft;
-
-// drag.addEventListener("mousedown", (ev) => {
-//   isDragging = true;
-//   drag.classList.add("dragging");
-//   startX = ev.pageX;
-//   startScrollLeft = drag.scrollLeft;
-// });
-
-// drag.addEventListener("mousemove", (ev) => {
-//   if (!isDragging) return;
-//   drag.scrollLeft = startScrollLeft - (ev.pageX - startX);
-
-//   if (drag.scrollWidth - drag.clientWidth - 100 - drag.scrollLeft < 100) {
-//     addCard();
-//   }
-// });
-// e
-
-
-// drag.addEventListener("mouseup", () => {
-//   isDragging = false;
-//   drag.classList.remove("dragging");
-// });
 
 const url = "/data/wisata.json";
 async function getData() {
@@ -124,22 +75,56 @@ async function getData() {
   }));
 }
 
+function buatCard(item){
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card');
+
+  const img = document.createElement('img');
+  img.src = `/Asset/${item.gambar}`;
+  img.alt = "Gambar";
+  img.classList.add('card-img');
+  img.draggable = false;
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+
+  const cardTitle = document.createElement('h5');
+  cardTitle.classList.add('card-title');
+  cardTitle.textContent = item.nama;
+
+  const description = document.createElement('p');
+  description.classList.add('card-text');
+  description.textContent = item.deskripsi;
+
+  const link = document.createElement('a');
+  link.classList.add('card-link');
+  link.textContent = "Baca Lebih Lanjut";
+  link.href = 'wisata.html';
+
+  link.addEventListener('click', () => {
+    simpanData(item);
+  })
+
+
+  cardDiv.appendChild(img);
+  cardDiv.appendChild(cardBody);
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(description);
+  cardBody.appendChild(link);
+
+  return cardDiv;
+}
+
 function addCard(){
   getData().then(data => {
     data.forEach(item => {
-      let card = ''
-      card = `
-      <div class="card">
-        <img src="/Asset/${item.gambar}" draggable="false" alt="Gambar" class="card-img">
-        <div div class="card-body">
-          <h5 class="card-title">${item.nama}</h5>
-          <p class="card-text">${item.deskripsi}</p>
-          <a href="${item.link}" class="card-link">Baca Lebih Lanjut</a>
-        </div>
-      </div>
-      `;
-      drag.innerHTML += card;
+      const card = buatCard(item);
+      drag.appendChild(card);
     });
   });
+}
+
+function simpanData(item){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(item.nama));
 }
 

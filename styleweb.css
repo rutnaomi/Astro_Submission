@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   line-height: 20px;
+  scroll-behavior: smooth;
 }
 body{
   background-color: #bdd09fc7;
@@ -39,6 +40,11 @@ nav .nav-link a{
   list-style: none;
 }
 
+.nav-link li :hover{
+  color: #a9a18c;
+  transition: 0.2s;
+}
+
 
 
 .logo img{
@@ -47,12 +53,13 @@ nav .nav-link a{
 }
 
 .container{
-  background-color: #a9a18c11;
+  background-color: #ffffff75;
   border-radius: 10px;
   width: 65%;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 80px ;
-  padding: 20px 20px 20px 20px
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px;
 }
 .container p{
   letter-spacing: 2px;
@@ -64,7 +71,6 @@ nav .nav-link a{
   width: 100%;
 }
 .container h2{
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 .container-location{
@@ -86,7 +92,7 @@ nav .nav-link a{
 .container hr{
   opacity: 10%;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .container-search-bar{
@@ -133,27 +139,35 @@ nav .nav-link a{
   cursor: pointer;
 }
 .result{
-  margin-left: 38px;
-  margin-right: 39px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
   z-index: 1;
   position: absolute;
-  background-color: white;
-}
-.result ul {
-  margin-right: -39px;
 }
 .result ul a li:hover{
   background-color: #ccc;
 }
 
 .result ul a li {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+  background-color: white;
   list-style: none;
   padding: 10px;
-  margin-right: 39px;
-  width: 223px;
+  width: 225px;
   cursor: pointer;
-  
 }
+
+input[type='text']{
+  padding: 10px 10px 10px 10px;
+  border: none;
+  border-bottom: 1px solid #a9a18c24;
+  border-radius: 5px 5px 0 0;
+}
+
+
 .result ul a li {
   color: black;
 }
@@ -166,6 +180,12 @@ nav .nav-link a{
   display: flex;
   flex-direction: row;
 }
+
+#rute{
+  letter-spacing: 2px;
+  text-align: justify;
+}
+
 
 .container-main .container-kanan{
   margin-left: 20px;
@@ -221,4 +241,85 @@ a{
   height: 200px;
   background-color: #a9a18c24;
   border-radius: 10px;
+}
+
+
+#Support {
+  background-color: #ffffffa9;
+  padding: 50px 4rem;
+}
+
+#Support .layar-dalam {
+  text-align: center;
+}
+
+#Support h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#Support .ringkasan {
+  font-style: italic;
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#Support a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#Support a:hover {
+  text-decoration: underline;
+}
+
+.supportB{
+  gap: 2rem;
+  display: flex;
+}
+
+.supportB img{
+  width: 15%;
+}
+
+.matahari:hover{
+  background-color: rgb(210, 206, 206);
+  transition: 1s;
+}
+.Tim-pro:hover{
+  background-color: rgb(210, 206, 206);
+  transition: 1s;
+}
+.company:hover{
+  background-color: rgb(210, 206, 206);
+  transition: 1s;
+}
+
+.matahari, .Tim-pro, .company{
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 2rem;
+}
+
+.nav-container{
+z-index: 1;
+height: 100%;
+position: relative;
+}
+
+.button-nav{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 267.5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.button-nav img{
+  width: 50px;
+  cursor: pointer;
 }

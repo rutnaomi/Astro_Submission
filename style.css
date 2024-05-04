@@ -6,6 +6,7 @@
     line-height: 20px;
     font-size: 15px;
     letter-spacing: 1px;
+    scroll-behavior: smooth;
 }
 html{
     margin: 0;
@@ -25,6 +26,7 @@ body{
 }
 
 nav{
+    height: fit-content;
     z-index: 100;
     overflow: hidden;
     width: 100%;
@@ -290,6 +292,7 @@ section .conten-isi {
 margin-left: 0;
 
 }
+
 
 nav.putih{
     background-color: #fff;
