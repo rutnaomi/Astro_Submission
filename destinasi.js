@@ -92,7 +92,7 @@ async function getData(){
       if(iklan.childElementCount > 2){
         iklan.innerHTML = '';
         buatIklan();
-      }
+      }z
     } else {
       randomValue1 = getRandomValue(0, wisata.length - 1);
       randomValue2 = getRandomValue(0, wisata.length - 1);

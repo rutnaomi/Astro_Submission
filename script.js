@@ -9,6 +9,7 @@ const input = document.getElementById("input");
 const STORAGE_KEY = 'WISATA';
 const RENDER_EVENT = 'render-wisata';
 const titleWisata = document.getElementById('title-wisata');
+const rute = document.getElementById('rute');
 
 
 function getRandomValue(min, max) {
@@ -45,6 +46,7 @@ async function getData(){
       isi.innerText = wisata[indexAtas].teks;
       lokasi.innerText = wisata[indexAtas].lokasi;
       gambar.innerHTML = `<img src="/Asset/${wisata[indexAtas].gambar}" alt="">`
+      rute.innerHTML = wisata[indexAtas].rute;
     }
   }
   
