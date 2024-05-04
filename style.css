@@ -22,75 +22,124 @@ body{
 
 .page_dalam{
     width: 1000px;
-    margin:auto;
-}
-
-.page_penuh{
-    width: 100%;
+    margin: auto;
 }
 
 nav{
     height: fit-content;
     z-index: 100;
-    color: aliceblue;
-    text-align: center;
-    position: fixed;
-    border-bottom: 1px solid #b1b1b1;
-    /* line-height: 60px; */
+    overflow: hidden;
     width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-nav.putih{
-    background-color: aliceblue;
-}
-
-nav.putih ul li a{
-    color: #000000;
+    position: fixed;
+    top: 0;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid #fff;
+    justify-content: space-between;
+    box-shadow: red;
 }
 
 nav .logo{
     float: left;
     position: relative;
-    line-height: 55px;
     text-align: center;
-    /* bottom: 8px; */
+    justify-content: center;
+    top: 10px;
 }
 
 nav .logo img{
-    vertical-align: middle;
-    width: 50px;
+    width: 75px;
 }
 
-nav .menu{
-    float: right;
-    max-width: 600px;
+nav li{
+    display: inline;
 }
 
-nav .menu{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+.page_dalam ul{
+    justify-items: center;
 }
 
-nav .menu ul li{
-    list-style-type: none;
-    float: left;
+nav a{
+    text-decoration: underline;
+    color: #486B00;
+    padding: 0px 10px;
+    font-weight: bold;
+    transition: 0.15s;
 }
 
-nav ul li a{
-    color: #fff;
-    text-align: center;
-    padding: 0px 16px 0px 16px;
-    text-decoration: none;
+nav a:hover{
+    color: #c86d85;
 }
-nav ul li a:hover{
-    background-color: #cde2c6;
-    transition: 0.5s;
-    border-radius: 5px;
+
+#nav-button{
+    display: none;
 }
+
+label{
+    display: none;
+}
+
+/* responsivenyaaaa!!! */
+
+@media only screen and(max-width:736px) and (orientation: portrait) {
+
+    nav{
+        align-items: center;
+    }
+
+    nav .logo{
+        width: 30%;
+        position: absolute;
+        left: 0px;
+    }
+
+    nav .logo img{
+        padding-top: 20px;
+    }
+
+    nav ul{
+        position: fixed;
+        top: 44px;
+        width: 100%;
+        background: #b4a9a9;
+        max-height: 0;
+        /* untuk overflow hidden; */
+    }
+
+    nav li{
+        display: block;
+        width: 100px;
+        padding: 5px;
+    }
+
+    nav a{
+        width: 100%;
+        display: block;
+    }
+
+    nav li:hover{
+        background: darkolivegreen;
+    }
+
+    label{
+        display: block;
+        padding: 0px 10px;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 2%;
+    }
+
+    label:hover{
+        color: darkkhaki;
+    }
+
+    nav #nav-button:checked~ul{
+        max-height: 100%;
+        transition: all 1s ease-out;
+    }
+}
+
 
 /* Pengaturan header */
 header{
@@ -100,6 +149,7 @@ header{
     overflow: hidden;
     z-index: 2;
 }
+
 header video{
     position: absolute;
     top: 0;
@@ -107,6 +157,7 @@ header video{
     object-fit: cover;
     z-index: -2;
 }
+
 header .intro{
     z-index: 100;
     color: white;
@@ -114,29 +165,20 @@ header .intro{
     position: relative;
     top: 50%;
 }
+
 header .intro h3{
     font-size: 50px;
     margin: 0;
     padding: 0;
 }
-.button{
-    background-color: #c86d85;
-    height: 40px;
-    line-height: 44px;
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0px 20px 0px 20px;
-    font-size: 15px;
-    border-radius: 4px;
-}
+
 header .overlay{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     opacity: 25%; /* supaya warna tulisannya kontras dgn video */
     z-index: -1;
 }
@@ -151,7 +193,7 @@ header img{
     z-index: -2;
 }
 
-.button_menu{
+/* .button_menu{
     position: absolute;
     top: 1.7rem;
     right: 1rem;
@@ -173,12 +215,12 @@ header img{
     display: flex;
     align-items: center;
     }
-}
+} */
 
-.button_menu .garis{  /* untuk garis menu saat minimize */
+/* .button_menu .garis{
     height: 3px;
     background-color: white;
-}
+} */
 
 section{
     padding: 50px 0px 50px 0px;
@@ -203,9 +245,9 @@ section h3::after{
 section .conten-isi {
     border-radius: 5px;
     font-style: normal;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     padding: 2rem;
-    background-color: #567f06;
+    background-color: #B5C18E;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -222,27 +264,28 @@ section .conten-isi {
 }
 
 .kami{
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60%;
 }
 
 .kami img{
-width: 30%;
+    width: 30%;
 }
+
 .kocan{
-margin-right: -2rem;
-transition: 1s;
+    margin-right: -2rem;
+    transition: 1s;
 }
+
 .rut{
-margin-left: -2rem;
+    margin-left: -2rem;
     transition: 1s;
 }
 .kami:hover .kocan{
-
-margin-right: 0;
+    margin-right: 0;
 }
 
 .kami:hover .rut{
@@ -254,12 +297,12 @@ margin-left: 0;
 nav.putih{
     background-color: #fff;
 }
-nav.putih .button_menu .garis{
+/* nav.putih .button_menu .garis{
     background-color: #333;
 }
 nav .logo img.hitam{
     display: none;
-}
+} */
 
 @media screen and (max-width: 991.98px) {
     .page_dalam{
@@ -394,57 +437,7 @@ nav .menu ul li{
     margin-right: 20px;
 }
 
-  /* Style for Support section */
-  #Support {
-    background-color: #f9f9f9;
-    padding: 50px 4rem;
-}
-
-#Support .layar-dalam {
-    text-align: center;
-}
-
-#Support h3 {
-    font-size: 24px;
-    color: #333;
-}
-
-#Support .ringkasan {
-    font-style: italic;
-    color: #666;
-    font-size: 18px;
-}
-
-#Support a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-#Support a:hover {
-    text-decoration: underline;
-}
-
-.supportB{
-    gap: 2rem;
-    display: flex;
-}
-
-.supportB img{
-    width: 15%;
-}
-
-.matahari:hover{
-    background-color: rgb(210, 206, 206);
-    transition: 1s;
-}
-.Tim-pro:hover{
-    background-color: rgb(210, 206, 206);
-    transition: 1s;
-}
-.company:hover{
-    background-color: rgb(210, 206, 206);
-    transition: 1s;
-}
+ 
 
 .matahari, .Tim-pro, .company{
     border-radius: 8px;
@@ -471,4 +464,97 @@ position: relative;
 .button-nav img{
     width: 50px;
     cursor: pointer;
+}
+
+/* untuk footer */
+
+.scl{
+    max-width: 1000px;
+    background-color: #ffffff ;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+
+}
+
+.footer{
+    background-color: #fff;
+}
+
+.footer-col{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+}
+
+.footer-col h4{
+    font-size: 15px;
+    color: black;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: ' ';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    box-sizing: border-box;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #e10000;
+    padding-left: 10px;
+}
+
+.scl-links img{
+    width: 35px;
+    display: flex;
+}
+
+.scl-links{
+    gap: 5px;
+}
+
+.footer-col .scl-links{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0px 10px 10px 0px;
+    line-height: 40px;
+    transition: all 0.5s ease;
+
+}
+
+.footer-col .scl-links img:hover{
+    background-color: #B5C18E;
+    border-radius: 6px;
+}
+
+/* responsivenya lagiii */
+
+@media(max-width: 767px){
+    
 }
