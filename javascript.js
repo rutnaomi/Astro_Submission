@@ -8,6 +8,7 @@ const button = document.querySelectorAll(".wrapper .img");
 const nextBtn = document.getElementById('right');
 const prevBtn = document.getElementById('left');
 const STORAGE_KEY = 'WISATA';
+const tulisan = document.querySelectorAll('nav a');
 
 
 button.forEach(btn => {
@@ -17,15 +18,6 @@ button.forEach(btn => {
 })
 
 
-function klikMenu() {
-  tombolMenu.addEventListener("click", () => {
-    if (menu.style.display === "none") {
-      menu.style.display = "block";
-    } else {
-      menu.style.display = "none";
-    }
-  });
-}
 
 window.addEventListener("resize", () => {
   let width = window.innerWidth;
@@ -34,19 +26,26 @@ window.addEventListener("resize", () => {
   } else {
     menu.style.display = "none";
   }
-  klikMenu();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("scroll", () => {
     const scrollPos = window.scrollY;
     const isScrolled = scrollPos > 0;
-
+    if (isScrolled) {
+      tulisan.forEach(tulisan => {
+        tulisan.classList.add("hitam");
+      });
+    }else{
+      tulisan.forEach(tulisan => {
+        tulisan.classList.remove("hitam");
+      });
+    }
     nav.classList.toggle("putih", isScrolled);
     logoHitam.style.display = isScrolled ? "block" : "none";
     logoPutih.style.display = isScrolled ? "none" : "block";
 
-    klikMenu();
+   
   });
 });
 

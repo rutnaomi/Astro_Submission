@@ -7,10 +7,18 @@ const resultContainer = document.querySelector(".result");
 
 window.onscroll = () =>{
   let scrollTop = window.scrollY;
+
+  console.log(scrollTop);
   if(scrollTop >= 109){
     sidebar_content.classList.add('is-fixed');
   }else{
     sidebar_content.classList.remove('is-fixed');
+  }
+  if(scrollTop >= 2873){
+    sidebar_content.classList.remove('is-fixed');
+    sidebar_content.classList.add('is-stop');
+  }else{
+    sidebar_content.classList.remove('is-stop');
   }
 }
 
