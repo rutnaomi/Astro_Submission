@@ -204,7 +204,6 @@ header img{
     object-fit: cover;
     z-index: -2;
 }
-
 /* .button_menu{
     position: absolute;
     top: 1.7rem;
@@ -560,5 +559,35 @@ ul{
 /* responsivenya lagiii */
 
 @media(max-width: 767px){
-    
+    html{
+        font-size: 50%;
+    }
+    .k{
+    justify-content: center;
+      flex-wrap: wrap;
+    }
+    .kami{
+        width: 100%;
+    }
+    .layarkamilagi{
+        width: 100%;
+    }
+    .card {
+        width: 100rem; 
+        right: 20px;
+      }
+      
+      .card-img {
+        width: 100%;
+        height: 150px;
+        
+    }
+    .scl .row{
+        justify-content: center;
+       flex-wrap: wrap;
+    }
+    .footer-col{
+        flex-wrap: wrap;
+    }
+
 }
